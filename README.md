@@ -27,15 +27,15 @@ It's incredibly easy to install. If you're cool, you can skip the first step (se
 ```<div id="markdown-editor"></div>```
 
 4. Then insert this in your footer.
-```<script type="text/javascript" src="css/jquery.markdown.js"></script>
-<script type="text/javascript">
-  // The first parameter is the code below is the pre-instance API.
-  var instance = $("#markdown-editor").markdown({
-    editable: true
-  });
+    <script type="text/javascript" src="css/jquery.markdown.js"></script>
+    <script type="text/javascript">
+      // The first parameter is the code below is the pre-instance API.
+      var instance = $("#markdown-editor").markdown({
+        editable: true
+      });
 
-  // instance is now the post-instance API.
-</script>```
+      // instance is now the post-instance API.
+    </script>
 
 5. Your now successfully installed!
 
