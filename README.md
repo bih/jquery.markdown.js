@@ -1,9 +1,7 @@
 ![jquery.markdown.js logo](http://i.imgur.com/K6IrS.png)
 
 # jQuery.markdown.js | WYSIWYG Markdown Editor
-Markdown is a jQuery plugin (written in CoffeeScript) released under the [MIT License](http://opensource.org/licenses/MIT) that brings a beautiful, lightweight and standards-compliant WYSIWYG editor to your website. I've written a blog post on the philosophy behind Markdown [on my blog](http://bilaw.al/jquery-markdown-js/).
-
-You can find a demo by [clicking here](http://htmlpreview.github.com/?https://github.com/bih/jquery.markdown.js/blob/master/demo/index.html).
+Markdown is a jQuery plugin (written in CoffeeScript) released under the [MIT License](http://opensource.org/licenses/MIT) that brings a beautiful, lightweight and standards-compliant WYSIWYG editor to your website. You can find a demo by [clicking here](http://htmlpreview.github.com/?https://github.com/bih/jquery.markdown.js/blob/master/demo/index.html).
 
 Some of the features it boasts:
 * Incredibly fast (and small) -- altogether it's 8KB compressed.
