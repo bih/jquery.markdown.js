@@ -1,0 +1,114 @@
+/* jquery.markdown.js */
+/* This jQuery plugin provides a built-in WYSIWYG Markdown editor that's simple, fast, and powerful. */
+/* */
+/* Released under the MIT License */
+/* Author website: http://bilaw.al/ */
+/* Blog post: http://bilaw.al/jquery-markdown-js/ */
+/* Git Repository: http://github.com/bih/jquery.markdown.js */
+/* Variables. */
+/* Stupid outline ruins the UX. Remove at your own will. */
+.jquery-markdown-editor,
+.jquery-markdown-editor:hover,
+.jquery-markdown-editor:active,
+.jquery-markdown-text,
+.jquery-markdown-text:hover,
+.jquery-markdown-text:active {
+  outline: none !important; }
+
+/* Now the rest. Should be pretty intuitive. If not, tweet me at @bilawalhameed */
+.jquery-markdown-text {
+  width: 1px;
+  height: 1px;
+  display: none; }
+
+.jquery-markdown-editor {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif", "Times New Roman";
+  font-size: 16px;
+  overflow: auto; }
+
+.jquery-markdown-editor ::selection,
+.jquery-markdown-editor ::-moz-selection {
+  color: #113966;
+  background: #9ac4f5; }
+
+.markdown-none {
+  float: none;
+  line-height: 20px; }
+
+.markdown-h1,
+.markdown-h2,
+.markdown-h3,
+.markdown-h4,
+.markdown-h5,
+.markdown-h6 {
+  font-weight: bold; }
+
+.markdown-h1 {
+  font-size: 30px !important; }
+
+.markdown-h2 {
+  font-size: 28px !important; }
+
+.markdown-h3 {
+  font-size: 26px !important; }
+
+.markdown-h4 {
+  font-size: 24px !important; }
+
+.markdown-h5 {
+  font-size: 22px !important; }
+
+.markdown-h6 {
+  font-size: 20px; }
+
+.markdown-bquote {
+  padding: 4px 0px;
+  font-size: 15px;
+  font-style: italic; }
+
+.markdown-bquote-level1 {
+  color: black; }
+
+.markdown-bquote-level2 {
+  color: #333333; }
+
+.markdown-bquote-level3 {
+  color: #666666; }
+
+.markdown-bquote-level4 {
+  color: #999999; }
+
+.markdown-bquote-level6 {
+  color: #cccccc; }
+
+.markdown-ordlist {
+  padding-left: 10px; }
+
+.markdown-ordlist-num1,
+.markdown-ordlist-num2,
+.markdown-ordlist-num3,
+.markdown-ordlist-num4,
+.markdown-ordlist-num5 {
+  font-weight: bold; }
+
+.markdown-unordlist {
+  padding-left: 10px; }
+
+.markdown-list-paragraph {
+  padding-left: 12px; }
+
+.markdown-hr {
+  background: #ededed;
+  color: #888888;
+  height: 10px; }
+
+.markdown-code {
+  font-family: "Courier New";
+  font-size: 15px; }
+
+/* Anything below is for { development: true } setting. */
+.markdown-bold {
+  font-weight: bold; }
+
+.markdown-underscore {
+  text-decoration: underline; }

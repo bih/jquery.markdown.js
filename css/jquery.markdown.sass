@@ -1,0 +1,126 @@
+/* jquery.markdown.js
+/* This jQuery plugin provides a built-in WYSIWYG Markdown editor that's simple, fast, and powerful.
+/*
+/* Released under the MIT License
+/* Author website: http://bilaw.al/
+/* Blog post: http://bilaw.al/jquery-markdown-js/
+/* Git Repository: http://github.com/bih/jquery.markdown.js
+
+
+/* Variables.
+$base_header_font_size: 20px
+$base_header_font_increment: 2px
+
+$base_text_font_size: 16px
+$base_text_font_family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif", "Times New Roman"
+
+$selection_color: #113966
+$selection_background: #9AC4F5
+
+/* Stupid outline ruins the UX. Remove at your own will.
+.jquery-markdown-editor,
+.jquery-markdown-editor:hover,
+.jquery-markdown-editor:active,
+.jquery-markdown-text,
+.jquery-markdown-text:hover,
+.jquery-markdown-text:active
+	outline: none !important
+
+/* Now the rest. Should be pretty intuitive. If not, tweet me at @bilawalhameed
+.jquery-markdown-text
+	width: 1px
+	height: 1px
+	display: none
+
+.jquery-markdown-editor
+	font-family: $base_text_font_family
+	font-size: $base_text_font_size
+	overflow: auto
+
+.jquery-markdown-editor ::selection,
+.jquery-markdown-editor ::-moz-selection
+	color: $selection_color
+	background: $selection_background
+
+.markdown-none
+	float: none
+	line-height: 20px
+
+.markdown-h1,
+.markdown-h2,
+.markdown-h3,
+.markdown-h4,
+.markdown-h5,
+.markdown-h6
+	font-weight: bold
+
+.markdown-h1
+	font-size: $base_header_font_size + ($base_header_font_increment * 5) !important
+
+.markdown-h2
+	font-size: $base_header_font_size + ($base_header_font_increment * 4) !important
+
+.markdown-h3
+	font-size: $base_header_font_size + ($base_header_font_increment * 3) !important
+
+.markdown-h4
+	font-size: $base_header_font_size + ($base_header_font_increment * 2) !important
+
+.markdown-h5
+	font-size: $base_header_font_size + ($base_header_font_increment * 1) !important
+
+.markdown-h6
+	font-size: $base_header_font_size
+
+.markdown-bquote
+	padding: 4px 0px
+	font-size: 15px
+	font-style: italic
+
+.markdown-bquote-level1
+	color: #000
+
+.markdown-bquote-level2
+	color: #333
+
+.markdown-bquote-level3
+	color: #666
+
+.markdown-bquote-level4
+	color: #999
+
+.markdown-bquote-level6
+	color: #CCC
+
+.markdown-ordlist
+	padding-left: 10px	
+
+.markdown-ordlist-num1,
+.markdown-ordlist-num2,
+.markdown-ordlist-num3,
+.markdown-ordlist-num4,
+.markdown-ordlist-num5
+	font-weight: bold
+
+.markdown-unordlist
+	padding-left: 10px
+
+.markdown-list-paragraph
+	padding-left: 12px
+
+.markdown-hr
+	background: #ededed
+	color: #888
+	height: 10px
+
+.markdown-code
+	font-family: "Courier New"
+	font-size: 15px
+
+/* Anything below is for { development: true } setting. */
+
+.markdown-bold
+	font-weight: bold
+
+.markdown-underscore
+	text-decoration: underline

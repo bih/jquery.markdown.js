@@ -1,0 +1,186 @@
+<!doctype html>
+<head>
+
+<!-- 
+# jquery.markdown.js
+# This jQuery plugin provides a built-in WYSIWYG Markdown editor that's simple, fast, and powerful.
+# 
+# Released under the MIT License
+# Author website: http://bilaw.al/
+# Blog post: http://bilaw.al/jquery-markdown-js/
+# Git Repository: http://github.com/bih/jquery.markdown.js
+-->
+
+	<title>jquery.markdown.js | real-time markdown js</title>
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.markdown.css" />
+
+<style>
+	body {
+		margin: 0;
+		padding: 30px 0 0;
+		background: #FFF;
+		font-smooth: antialiasing;
+		text-shadow: 0 0 1px rgba(0,0,0,0.3);
+		font-family: 'Lato' !important;
+	}
+	#logo { text-align: center; }
+	#footer { text-align: center; font-size: 15px; }
+	#footer a { font-weight:bold; text-decoration: none;}
+	#outer {
+		width: 960px;
+		margin: 0 auto;
+	}
+	#intro {
+		background: #56c5ff;
+		color: #051a2c;
+		padding: 20px 15px;
+		display: block;
+		text-align: center;
+		margin: 20px 0;
+	}
+	#intro a {
+		color: inherit;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	#intro a:hover {
+		text-decoration: underline;
+	}
+	#intro h3 {
+		margin: 0;
+		padding: 0;
+		font-weight: 400;
+		font-style: italic;
+		font-size: 22px;
+	}
+	#intro p {
+		margin: 0;
+		font-size: 16px;
+		padding: 3px 0 10px;
+		line-height: 18px;
+	}
+	#markdown-editor {
+		font-family: 'Lato' !important;
+		background: #FFF;
+		min-height: 500px;
+		border: 1px solid #ccc;
+		padding: 10px;
+	}
+</style>
+</head>
+<body>
+<div id="outer">
+
+	<div id="logo">
+		<img src="./jquery_markdown_js.png" />
+	</div>
+
+	<div id="intro">
+		<h3>Built by <a href='http://bilaw.al' target='_blank'>Bilawal Hameed</a>. Spoon this on <a href='http://github.com/bih/jquery.markdown.js' target='_blank'>GitHub</a>.</h3>
+	</div>
+
+
+	<div id="editor">
+
+<!-- This supports tags, because they don't conflict in <textarea>. Then we can load in #markdown-editor -->
+<!-- Markdown editor -->
+<textarea id="markdown-dynamic-load" style="display:none;"># jquery.markdown.js | wysiwyg markdown editor
+Markdown is a jQuery plugin (written in CoffeeScript) that brings a beautiful, lightweight and standards-compliant WYSIWYG editor to your website. I've written a blog post on the philosophy behind Markdown [on my blog](http://bilaw.al/jquery-markdown-js/).
+
+Some of the features it boasts:
+> Incredibly fast (and small) -- altogether it's 8KB compressed.
+> Incredibly smart -- it tracks changes on-the-fly + lots more.
+> Easy to install -- the editor posts raw markdown. no backend code needed.
+> Extensible API -- build anything on top of the plugin. utilize all of its internal tools.
+> Totally customizable -- make it look as if you made it. it's beautifully simple to edit in css.
+> Well documented -- hack it to do anything you want outside it's capability.
+> Fully HTML5 + CSS3 + jQuery. No useless dependencies. Fallback support using <noscript> and <textarea>.
+
+## Installation
+It's incredibly easy to install. If you're cool, you can skip the first step (seriously!).
+
+1. Download jquery.markdown.js to desired local directory
+    https://github.com/bih/jquery.markdown.js/archive/master.zip
+
+2. In your HTML document, include this in your header:
+    <link rel="stylesheet" href="css/jquery.markdown.css" type="text/css" />
+
+3. Insert this to where you want the editor
+    <div id="markdown-editor"></div>
+
+4. Then insert this in your footer.
+    <script type="text/javascript" src="css/jquery.markdown.js"></script>
+    <script type="text/javascript">
+      // The first parameter is the code below is the pre-instance API.
+      var instance = $("#markdown-editor").markdown({
+                       editable: true
+                     });
+
+      // instance is now the post-instance API.
+    </script>
+
+5. Your now successfully installed!
+
+## Advanced
+This plugin boasts a powerful, extensive API (in two forms: pre-and-post instance) for full control.
+
+#### Pre-instance API
+The settings you can load when initializing the .markdown() instance are:
+> [class_name]           -- This allows you to customize the styling of each Markdown instance.
+> [textarea_name]        -- This allows you to set the name of the textarea which posts raw Markdown.
+> [focus]                -- Whether the editor should be in focus on loading.
+> [spellcheck]           -- Whether you wish to enable HTML5's native spellcheck feature.
+> [editable]             -- Should the editor be editable? This can be enabled at anytime using the in
+> [text]                 -- Any Markdown you wish to load? This method is highly recommended over other forms to avoid browser rendering of tags.
+> [onload]               -- Run an anonymous or named function when text is changed.
+> [onchange]             -- Run an anonymous or named function when text is changed.
+> [development]          -- Active our unstable features? Only for those playing about with the code.
+
+##### Post-instance API
+The functions you can call under "instance" or whatever your variable is (i.e. "instance.development(true)") are:
+> .development(true|false)     -- This enables/disables the unstable features.
+> .editable(true|false)        -- This enables/disables whether you can edit on the editor.
+> .focus()                     -- This places focus on the editor.
+> .parse()                     -- Manually parse. If you changed the content via jQuery (and not the library), use this to parse.
+> .spellcheck(true|false)      -- This enables/disables the native HTML5 spellcheck functionality.
+> .text("# Hello...")          -- This changes the Markdown text in the editor and re-parses automatically.
+> .version()                   -- This shows the jquery.markdown version number of the instance.
+> .unbind()                    -- This unbinds the jquery.markdown library to this object.
+
+
+## About
+This plugin was happily developed by Bilawal Hameed, a hacker and entrepreneur. I hacked HTML5 to discover this functionality, and quite frankly, I hated two editors for one piece of text. So, all grace, jquery.markdown should develop into a great piece of kit.
+
+I won't say it's quite ready for production just yet. It doesn't support the (full John Gruber Markdown specification](http://daringfireball.net/projects/markdown/syntax) but it should very quickly. I merely hacked this together in a week, and I felt it would be great to open source for all these beautiful websites who deserve a half-decent Markdown experience.</textarea>
+
+<div id="markdown-editor"># Loading
+This won't be shown unless you have JavaScript disabled. This should show what's available in "textarea#test".</div>
+
+	<div id="footer"><p>Developed by <a href='http://twitter.com/bilawalhameed' target='_blank'>@bilawalhameed</a>. Licensed under the MIT license.</p></div>
+
+</div>
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../js/jquery.markdown.js"></script>
+<script type="text/javascript">
+	/* We're calling the Markdown editor. 'instance' will hold access to the API specific to that instance of jquery.markdown (in case you wish to run multiple editors simultaneously) */
+	var instance = $("#markdown-editor").markdown({
+	             	  class_name:    "jquery-markdown-editor", // This is added to every Markdown instance. It links with the jquery.markdown.css styling.
+	             	  textarea_name: "jquery-markdown-text",   // This is the textarea [name] which will post the raw Markdown. 
+	             	  text:          $("textarea#markdown-dynamic-load").val(),
+	             	  focus:         true,  // Whether the editor should be in focus upon loading.
+	             	  spellcheck:    false, // Whether the native HTML5 spellcheck should be activated.
+	             	  development:   false, // Whether unstable tools should be added. See README to understand what these are.
+	             	  editable:      true,  // Whether the user can edit the form, or whether it is just for displaying.
+	             	  onload:        function(_instance) {
+                                       // _instance is the post-instance API.
+	             	                 },
+	             	  onchange:      function(e) { // When text has changed, this will be called.
+	             		               //console.log('onchange initiated. Line edited: ' + e.line() + ' | Markdown characters: ' + e.raw().length);
+	             	                 }
+	               });
+</script>
+</body>
+</html>
