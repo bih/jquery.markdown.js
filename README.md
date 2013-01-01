@@ -6,13 +6,13 @@ Markdown is a jQuery plugin (written in CoffeeScript) released under the [MIT Li
 You can find a demo by [clicking here](http://bilaw.al/jquery-markdown-demo/).
 
 Some of the features it boasts:
-> Incredibly fast (and small) -- altogether it's 8KB compressed.
-> Incredibly smart -- it tracks changes on-the-fly + lots more.
-> Easy to install -- the editor posts raw markdown. no backend code needed.
-> Extensible API -- build anything on top of the plugin. utilize all of its internal tools.
-> Totally customizable -- make it look as if you made it. it's beautifully simple to edit in css.
-> Well documented -- hack it to do anything you want outside it's capability.
-> Fully HTML5 + CSS3 + jQuery. No useless dependencies. Fallback support using <noscript> and <textarea>.
+* Incredibly fast (and small) -- altogether it's 8KB compressed.
+* Incredibly smart -- it tracks changes on-the-fly + lots more.
+* Easy to install -- the editor posts raw markdown. no backend code needed.
+* Extensible API -- build anything on top of the plugin. utilize all of its internal tools.
+* Totally customizable -- make it look as if you made it. it's beautifully simple to edit in css.
+* Well documented -- hack it to do anything you want outside it's capability.
+* Fully HTML5 + CSS3 + jQuery. No useless dependencies. Fallback support using <noscript> and <textarea>.
 
 ## Installation
 It's incredibly easy to install. If you're cool, you can skip the first step (seriously!).
@@ -44,26 +44,26 @@ This plugin boasts a powerful, extensive API (in two forms: pre-and-post instanc
 
 #### Pre-instance API
 The settings you can load when initializing the .markdown() instance are:
-> [class_name]           -- This allows you to customize the styling of each Markdown instance.
-> [textarea_name]        -- This allows you to set the name of the textarea which posts raw Markdown.
-> [focus]                -- Whether the editor should be in focus on loading.
-> [spellcheck]           -- Whether you wish to enable HTML5's native spellcheck feature.
-> [editable]             -- Should the editor be editable? This can be enabled at anytime using the in
-> [text]                 -- Any Markdown you wish to load? This method is highly recommended over other forms to avoid browser rendering of tags.
-> [onload]               -- Run an anonymous or named function when text is changed.
-> [onchange]             -- Run an anonymous or named function when text is changed.
-> [development]          -- Active our unstable features? Only for those playing about with the code.
+* [class_name]           -- This allows you to customize the styling of each Markdown instance.
+* [textarea_name]        -- This allows you to set the name of the textarea which posts raw Markdown.
+* [focus]                -- Whether the editor should be in focus on loading.
+* [spellcheck]           -- Whether you wish to enable HTML5's native spellcheck feature.
+* [editable]             -- Should the editor be editable? This can be enabled at anytime using the in
+* [text]                 -- Any Markdown you wish to load? This method is highly recommended over other forms to avoid browser rendering of tags.
+* [onload]               -- Run an anonymous or named function when text is changed.
+* [onchange]             -- Run an anonymous or named function when text is changed.
+* [development]          -- Active our unstable features? Only for those playing about with the code.
 
 ##### Post-instance API
 The functions you can call under "instance" or whatever your variable is (i.e. "instance.development(true)") are:
-> .development(true|false)     -- This enables/disables the unstable features.
-> .editable(true|false)        -- This enables/disables whether you can edit on the editor.
-> .focus()                     -- This places focus on the editor.
-> .parse()                     -- Manually parse. If you changed the content via jQuery (and not the library), use this to parse.
-> .spellcheck(true|false)      -- This enables/disables the native HTML5 spellcheck functionality.
-> .text("# Hello...")          -- This changes the Markdown text in the editor and re-parses automatically.
-> .version()                   -- This shows the jquery.markdown version number of the instance.
-> .unbind()                    -- This unbinds the jquery.markdown library to this object.
+* .development(true|false)     -- This enables/disables the unstable features.
+* .editable(true|false)        -- This enables/disables whether you can edit on the editor.
+* .focus()                     -- This places focus on the editor.
+* .parse()                     -- Manually parse. If you changed the content via jQuery (and not the library), use this to parse.
+* .spellcheck(true|false)      -- This enables/disables the native HTML5 spellcheck functionality.
+* .text("# Hello...")          -- This changes the Markdown text in the editor and re-parses automatically.
+* .version()                   -- This shows the jquery.markdown version number of the instance.
+* .unbind()                    -- This unbinds the jquery.markdown library to this object.
 
 
 ## About
