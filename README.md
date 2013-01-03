@@ -56,7 +56,7 @@ The settings you can load when initializing the .markdown() instance are:
 * `[onchange]`             -- Run an anonymous or named function when text is changed.
 * `[development]`          -- Active our unstable features? Only for those playing about with the code.
 
-##### Post-instance API
+#### Post-instance API
 The functions you can call under "instance" or whatever your variable is (i.e. `instance.development(true)`) are:
 * `.development(true|false)`     -- This enables/disables the unstable features.
 * `.editable(true|false)`        -- This enables/disables whether you can edit on the editor.
@@ -71,6 +71,6 @@ The functions you can call under "instance" or whatever your variable is (i.e. `
 ## About
 This plugin was happily developed by Bilawal Hameed, a hacker and entrepreneur. I hated two editors for one piece of text, so I experimented with HTML5 to come up with this hack. Ideally, it should improve into one great piece of kit for websites who care about UI.
 
-It's not ready for production yet. It doesn't support the full Markdown specification [full John Gruber Markdown specification](http://daringfireball.net/projects/markdown/syntax). It's a hack over a couple of hours, and I felt that it would improve faster by releasing it in the wild.
+It's not ready for production yet. It doesn't support the complete [John Gruber Markdown specification](http://daringfireball.net/projects/markdown/syntax) as of yet. It's a hack over a couple of hours, and I felt that it would improve faster by releasing it in the wild.
 
-Tweet me at [@bilawalhameed](http://twitter.com/bilawalhameed) if you're stuck.
+Play about with it & let me know what you think. Tweet me at [@bilawalhameed](http://twitter.com/bilawalhameed) if you're stuck.
