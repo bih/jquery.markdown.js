@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jquery.markdown.js by bih</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/bih/jquery.markdown.js">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/bih/jquery.markdown.js/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/bih/jquery.markdown.js/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Jquery.markdown.js</h1>
+          <p>A WYSIWYG Markdown editor built as a jQuery plugin (written in CoffeeScript + SASS).</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/bih">bih</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <p>Some of the features it boasts:</p>
+
+<ul>
+<li>Incredibly fast (and small) -- altogether it's 8KB compressed.</li>
+<li>Incredibly smart -- it tracks changes on-the-fly + lots more.</li>
+<li>Easy to install -- the editor posts raw markdown. no backend code needed.</li>
+<li>Extensible API -- build anything on top of the plugin. utilize all of its internal tools.</li>
+<li>Totally customizable -- make it look as if you made it. it's beautifully simple to edit in css.</li>
+<li>Well documented -- hack it to do anything you want outside it's capability.</li>
+<li>Fully HTML5 + CSS3 + jQuery. No useless dependencies. Fallback support using <code>&lt;noscript&gt;</code> and <code>&lt;textarea&gt;</code>.</li>
+</ul><h2>Installation</h2>
+
+<p>It's incredibly easy to install. If you're cool, you can skip the first step (seriously!).</p>
+
+<ol>
+<li>
+<p>Download jquery.markdown.js to desired local directory</p>
+
+<div class="highlight"><pre><span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/bih/jquery.markdown.js/archive/master.zip</span>
+</pre></div>
+</li>
+<li>
+<p>In your HTML document, include this in your header:</p>
+
+<div class="highlight"><pre><span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"css/jquery.markdown.css"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/css"</span> <span class="o">/&gt;</span>
+</pre></div>
+</li>
+<li>
+<p>Insert this to where you want the editor</p>
+
+<div class="highlight"><pre><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"markdown-editor"</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+</pre></div>
+</li>
+<li>
+<p>Then insert this in your footer.</p>
+
+<div class="highlight"><pre><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"css/jquery.markdown.js"</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+<span class="kd">var</span> <span class="nx">instance</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#markdown-editor"</span><span class="p">).</span><span class="nx">markdown</span><span class="p">({</span> <span class="nx">editable</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="c1">// instance is now the post-instance API.</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</pre></div>
+</li>
+<li><p>Your now successfully installed!</p></li>
+</ol><h2>Advanced</h2>
+
+<p>This plugin boasts a powerful, extensive API (in two forms: pre-and-post instance) for full control.</p>
+
+<h4>Pre-instance API</h4>
+
+<p>The settings you can load when initializing the .markdown() instance are:</p>
+
+<ul>
+<li>
+<code>[class_name]</code>           -- This allows you to customize the styling of each Markdown instance.</li>
+<li>
+<code>[textarea_name]</code>        -- This allows you to set the name of the textarea which posts raw Markdown.</li>
+<li>
+<code>[focus]</code>                -- Whether the editor should be in focus on loading.</li>
+<li>
+<code>[spellcheck]</code>           -- Whether you wish to enable HTML5's native spellcheck feature.</li>
+<li>
+<code>[editable]</code>             -- Should the editor be editable? This can be enabled at anytime using the post-instance API.</li>
+<li>
+<code>[text]</code>                 -- Any Markdown you wish to load? Highly recommended over others.</li>
+<li>
+<code>[onload]</code>               -- Run an anonymous or named function when instance is fully loaded.</li>
+<li>
+<code>[onchange]</code>             -- Run an anonymous or named function when text is changed.</li>
+<li>
+<code>[development]</code>          -- Active our unstable features? Only for those playing about with the code.</li>
+</ul><h4>Post-instance API</h4>
+
+<p>The functions you can call under "instance" or whatever your variable is (i.e. <code>instance.development(true)</code>) are:</p>
+
+<ul>
+<li>
+<code>.development(true|false)</code>     -- This enables/disables the unstable features.</li>
+<li>
+<code>.editable(true|false)</code>        -- This enables/disables whether you can edit on the editor.</li>
+<li>
+<code>.focus()</code>                     -- This places focus on the editor.</li>
+<li>
+<code>.parse()</code>                     -- Manually parse. If you changed the content via jQuery (and not the library), use this to parse.</li>
+<li>
+<code>.spellcheck(true|false)</code>      -- This enables/disables the native HTML5 spellcheck functionality.</li>
+<li>
+<code>.text("# Hello world")</code>       -- This changes the Markdown text in the editor (and re-parses). New line split by <code>\n</code>.</li>
+<li>
+<code>.version()</code>                   -- This shows the jquery.markdown version number of the instance.</li>
+<li>
+<code>.unbind()</code>                    -- This unbinds the jquery.markdown library to this object.</li>
+</ul><h2>About</h2>
+
+<p>This plugin was happily developed by Bilawal Hameed, a hacker and entrepreneur. I hated two editors for one piece of text, so I experimented with HTML5 to come up with this hack. Ideally, it should improve into one great piece of kit for websites who care about UI.</p>
+
+<p>It's not ready for production yet. It doesn't support the complete <a href="http://daringfireball.net/projects/markdown/syntax">John Gruber Markdown specification</a> as of yet. It's a hack over a couple of hours, and I felt that it would improve faster by releasing it in the wild.</p>
+
+<p>Play about with it &amp; let me know what you think. Tweet me at <a href="http://twitter.com/bilawalhameed">@bilawalhameed</a> if you're stuck.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
